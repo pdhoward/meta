@@ -20,8 +20,6 @@ const cors =                  require('cors');
 const favicon =               require('serve-favicon');
 const logger =                require('morgan')
 const helmet =                require('helmet')
-const settings =              require('../lib/settings')
-const breadcrumb =            require('../lib/breadcrumb')
 const transport =             require('../config/gmail');
 const { g, b, gr, r, y } =    require('../console');
 const { normalizePort}      = require('../handlers/helpers')
@@ -47,8 +45,6 @@ app.use(express.static(path.join(__dirname, '..', 'node_modules/semantic-ui/dist
 app.use(favicon(path.join(__dirname, '..', '/public/assets/favicon.ico')));
 app.use(cors());
 app.use(pretty({query: 'pretty'}))
-
-app.use(settings)    // initialize app settings based on env variables
 
 const isDev = (app.get('env') === 'development');
 
@@ -126,9 +122,6 @@ require('../routes/db')(db)
 ///////////////////////////// API CATALOGUE /////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 
-
-// trace via breadcrumbs
-app.use(breadcrumb())
 
 // home page
 app.get('/', home);
