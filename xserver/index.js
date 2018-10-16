@@ -41,6 +41,7 @@ app.set('view engine', 'js');
 app.engine('js', require('express-react-views').createEngine());
 app.use('/css', express.static(path.resolve(__dirname, '..', 'public/css')));
 app.use('/img', express.static(path.resolve(__dirname, '..', 'public/assets/img')));
+app.use('/404', express.static(path.resolve(__dirname, '..', 'public/web/404')));
 app.use(express.static(path.join(__dirname, '..', 'node_modules/semantic-ui/dist')));
 app.use(favicon(path.join(__dirname, '..', '/public/assets/favicon.ico')));
 app.use(cors());
@@ -114,8 +115,8 @@ const db =                  express.Router()
 
 
 require('../routes/home')(home)
-require('../routes/nopage')(nopage)
-require('../routes/errpage')(errpage)
+require('../routes/unk')(nopage)
+require('../routes/error')(errpage)
 require('../routes/db')(db)
 
 //////////////////////////////////////////////////////////////////////////
