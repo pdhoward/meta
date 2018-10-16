@@ -11,7 +11,6 @@ const { createReadStream } =    require('fs')
 const url =                     require('url')
 const path =                    require('path')
 const books =                   require('../src/components/data2')
-const exportFile =              require('../contentful/export.json')
 const { g, b, gr, r, y } =      require('../console');
 
 // space used to test xrender ... more complex contentTypes

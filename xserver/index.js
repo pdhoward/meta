@@ -110,20 +110,14 @@ process.on('uncaughtException', function (er) {
 ////////// Register and Config Routes ///////////////
 ////////////////////////////////////////////////////
 
-const apiprep =             express.Router()
-const apitest =             express.Router()
+
 const home =                express.Router()
-const apifetch =            express.Router()
-const apipost =             express.Router()
 const nopage =              express.Router()
 const errpage =             express.Router()
 const db =                  express.Router()
 
-require('../routes/apiprep')(apiprep)
-require('../routes/apitest')(apitest)
+
 require('../routes/home')(home)
-require('../routes/apifetch')(apifetch)
-require('../routes/apipost')(apipost)
 require('../routes/nopage')(nopage)
 require('../routes/errpage')(errpage)
 require('../routes/db')(db)
@@ -132,11 +126,6 @@ require('../routes/db')(db)
 ///////////////////////////// API CATALOGUE /////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 
-// update api with additional data
-app.use(apiprep);
-
-// test connections
-app.use(apitest);
 
 // trace via breadcrumbs
 app.use(breadcrumb())
@@ -146,12 +135,6 @@ app.get('/', home);
 
 // db handling
 app.use('/api/db', db);
-
-// fetch
-app.get('/api/fetch', apifetch);
-
-// post
-app.get('/api/post', apipost);
 
 // Catch 404 and forward to error handler
 app.use(nopage)
