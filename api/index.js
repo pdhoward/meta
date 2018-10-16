@@ -60,7 +60,9 @@ const getAllContent = () => {
    
     return new Promise((resolve, reject) => {
         client.getContentType('bookstore')
-            .then((response) => {                  
+            .then((response) => {
+                console.log(r(`The taxonomy for bookstore`))
+                console.log(response)
 
                 client.getEntries({
                     content_type: response.sys.id
