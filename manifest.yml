@@ -1,7 +1,7 @@
 ---
 applications:
 - path: .
-  name: strategicstore
+  name: meta
   buildpacks: 
     - https://github.com/cloudfoundry/nodejs-buildpack
   memory: 256M
