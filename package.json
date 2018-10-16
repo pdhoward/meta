@@ -1,7 +1,7 @@
 {
-  "name": "strategicstore",
+  "name": "meta",
   "version": "0.8.0",
-  "description": "demonstrate content made intelligent for conversational economy",
+  "description": "identify the structure of meta content for intlligent interations",
   "main": "server.js",
   "license": "MIT",
   "scripts": {
