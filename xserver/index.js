@@ -13,7 +13,6 @@ require('dotenv').config({
 const express =               require('express');
 const pretty =                require('express-prettify');
 const browserify =            require('browserify-middleware');
-const spreadplugin =          require('babel-plugin-transform-object-rest-spread');
 const bodyParser =            require('body-parser');
 const cookieParser =          require('cookie-parser')
 const path =                  require('path');
@@ -25,9 +24,6 @@ const settings =              require('../lib/settings')
 const breadcrumb =            require('../lib/breadcrumb')
 const transport =             require('../config/gmail');
 const { g, b, gr, r, y } =    require('../console');
-const { translate, 
-        initializeTranslations, 
-        setFallbackLocale } = require('../i18n/i18n')
 const { normalizePort}      = require('../handlers/helpers')
 
 // Express app
