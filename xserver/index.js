@@ -117,6 +117,7 @@ const graph =               express.Router()
 require('../routes/home')(home)
 require('../routes/unk')(nopage)
 require('../routes/error')(errpage)
+require('../routes/db')(db)
 require('../routes/graphtest')(graph)
 
 //////////////////////////////////////////////////////////////////////////
@@ -131,7 +132,7 @@ app.get('/', home);
 app.use('/api/db', db);
 
 // graphql
-app.use('/api/qraph', graph);
+app.use('/api/graph', graph);
 
 // Catch 404 and forward to error handler
 app.use(nopage)

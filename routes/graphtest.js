@@ -9,7 +9,7 @@ var schema = buildSchema(`
 var root = { hello: () => 'Hello world!' };
 
 
-const graph = (router) => {    
+const graphtest = (router) => {    
 
     router.use(function (req, res, next) {
 
@@ -17,7 +17,9 @@ const graph = (router) => {
         console.log(response);
         });
 
+        res.json({"msg": "success"})
+
     })
 }
 
-modules.export = graph
+module.exports = graphtest
