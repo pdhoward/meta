@@ -38,6 +38,7 @@
     "express-react-views": "^0.10.2",
     "g": "^2.0.1",
     "gh-pages": "^2.0.0",
+    "graphql": "^14.0.2",
     "helmet": "^3.13.0",
     "help": "^3.0.2",
     "lodash": "^4.17.11",
